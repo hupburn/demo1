@@ -41,7 +41,9 @@ public class FileController {
         } catch (IOException e) {
             LOGGER.error(e.toString(), e);
         }
+        System.out.println("上传失败");
         return "上传失败！";
+
     }
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public ResponseEntity<Object> downloadFile() throws FileNotFoundException {
@@ -62,6 +64,8 @@ public class FileController {
                 .contentType(MediaType.parseMediaType("application/text"))
                 .body(resource);
         return responseEntity;
+
+
     }
 
 }
